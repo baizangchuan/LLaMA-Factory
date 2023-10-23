@@ -1,3 +1,4 @@
+import torch
 from llmtuner import run_exp
 
 
@@ -11,4 +12,5 @@ def _mp_fn(index):
 
 
 if __name__ == "__main__":
+    print(torch.cuda.is_available())
     main()

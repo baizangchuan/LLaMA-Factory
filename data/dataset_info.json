@@ -1,7 +1,20 @@
 {
+  "qss_fact": {
+    "file_name": "qss_fact.json"
+
+  },
+  
   "alpaca_en": {
     "file_name": "alpaca_data_en_52k.json",
     "file_sha1": "607f94a7f581341e59685aef32f531095232cf23"
+  },
+  "DISC-Law-SFT-Pair":{
+    "file_name": "DISC-Law-SFT-Pair.json"
+  },
+  "DISC-Law-SFT-Triplet-released":{
+    "script_url":"/data1/hhj/repo/law-LLM/datasets/DISC-Law-SFT/DISC-Law-SFT-Triplet-released.jsonl",
+    "file_name": "DISC-Law-SFT-Triplet-released.jsonl"
+  
   },
   "alpaca_zh": {
     "file_name": "alpaca_data_zh_51k.json",
