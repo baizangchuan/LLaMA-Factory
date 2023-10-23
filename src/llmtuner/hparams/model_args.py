@@ -46,6 +46,10 @@ class ModelArguments:
         default=None,
         metadata={"help": "Adopt scaled rotary positional embeddings."}
     )
+    checkpoint_dir: Optional[str] = field(
+        default=None,
+        metadata={"help": "Path to the directory(s) containing the delta model checkpoints as well as the configurations."}
+    )
     flash_attn: Optional[bool] = field(
         default=False,
         metadata={"help": "Enable FlashAttention-2 for faster training."}
@@ -53,10 +57,6 @@ class ModelArguments:
     shift_attn: Optional[bool] = field(
         default=False,
         metadata={"help": "Enable shift short attention (S^2-Attn) proposed by LongLoRA."}
-    )
-    checkpoint_dir: Optional[str] = field(
-        default=None,
-        metadata={"help": "Path to the directory(s) containing the delta model checkpoints as well as the configurations."}
     )
     reward_model: Optional[str] = field(
         default=None,
@@ -70,9 +70,9 @@ class ModelArguments:
         default=None,
         metadata={"help": "Auth token to log in with Hugging Face Hub."}
     )
-    upcast_layernorm: Optional[bool] = field(
-        default=False,
-        metadata={"help": "Whether to upcast the layernorm weights in fp32."}
+    export_dir: Optional[str] = field(
+        default=None,
+        metadata={"help": "Path to the directory to save the exported model."}
     )
 
     def __post_init__(self):

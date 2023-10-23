@@ -8,6 +8,10 @@ class FinetuningArguments:
     r"""
     Arguments pertaining to which techniques we are going to fine-tuning with.
     """
+    stage: Optional[Literal["pt", "sft", "rm", "ppo", "dpo"]] = field(
+        default="sft",
+        metadata={"help": "Which stage will be performed in training."}
+    )
     finetuning_type: Optional[Literal["lora", "freeze", "full", "none"]] = field(
         default="lora",
         metadata={"help": "Which fine-tuning method to use."}
@@ -70,6 +74,14 @@ class FinetuningArguments:
     dpo_beta: Optional[float] = field(
         default=0.1,
         metadata={"help": "The beta parameter for the DPO loss."}
+    )
+    upcast_layernorm: Optional[bool] = field(
+        default=False,
+        metadata={"help": "Whether to upcast the layernorm weights in fp32."}
+    )
+    neft_alpha: Optional[float] = field(
+        default=0,
+        metadata={"help": "The alpha parameter to control the noise magnitude in NEFTune."}
     )
 
     def __post_init__(self):
